@@ -116,9 +116,10 @@ book-review-api/
 
 ### 🧠 Design Notes
 
--Users can only post one review per book
--All POST/PUT/DELETE routes require authentication (Bearer <JWT token>)
--Tokens are generated using jsonwebtoken and stored client-side
--Passwords are hashed using bcrypt before storage
--Pagination supported via query params (?page=1&limit=5)
--Search supports partial, case-insensitive matching on title/author
+- Users can only post one review per book
+- All POST/PUT/DELETE routes require authentication (Bearer <JWT token>)
+- Tokens are generated using jsonwebtoken and stored client-side
+- Passwords are hashed using bcrypt before storage
+- Pagination supported via query params (?page=1&limit=5)
+- Search supports partial, case-insensitive matching on title/author
+
