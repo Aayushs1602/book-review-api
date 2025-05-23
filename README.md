@@ -43,7 +43,7 @@ npx nodemon app.js
 ```
 
 
-🔐 Authentication Routes
+### 🔐 Authentication Routes
 | Method | Route         | Description             |
 | ------ | ------------- | ----------------------- |
 | POST   | `/api/signup` | Register new user       |
@@ -51,7 +51,7 @@ npx nodemon app.js
 
 
 
-📚 Book Routes
+### 📚 Book Routes
 | Method | Route                | Description                      |
 | ------ | -------------------- | -------------------------------- |
 | POST   | `/api/books`         | Add a book (auth required)       |
@@ -61,7 +61,7 @@ npx nodemon app.js
 
 
 
-✏️ Review Routes
+### ✏️ Review Routes
 | Method | Route                    | Description                            |
 | ------ | ------------------------ | -------------------------------------- |
 | POST   | `/api/books/:id/reviews` | Add a review to a book (auth required) |
@@ -70,24 +70,31 @@ npx nodemon app.js
 
 
 
-🧪 Example API Requests (curl)
-Signup
+### 🧪 Example API Requests (curl)
+### Signup
+```bash
 curl -X POST http://localhost:3000/api/signup \
   -H "Content-Type: application/json" \
   -d '{"name": "test", "email": "test@example.com", "password": "test123"}'
+```
 
-Login
+### Login
+```bash
 curl -X POST http://localhost:3000/api/login \
   -H "Content-Type: application/json" \
   -d '{"email": "test@example.com", "password": "test123"}'
+```
 
-Add Book (requires token)
+### Add Book (requires token)
+```bash
 curl -X POST http://localhost:3000/api/books \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <your_token>" \
   -d '{"title": "The Hobbit", "author": "Tolkien", "genre": "Fantasy", "description": "A fantasy classic"}'
+```
 
-🗂️ Project Structure
+### 🗂️ Project Structure
+```bash
 book-review-api/
 ├── controllers/
 │   ├── authController.js
@@ -105,8 +112,10 @@ book-review-api/
 ├── .gitignore
 ├── app.js
 └── README.md
+```
 
-🧠 Design Notes
+### 🧠 Design Notes
+
 -Users can only post one review per book
 -All POST/PUT/DELETE routes require authentication (Bearer <JWT token>)
 -Tokens are generated using jsonwebtoken and stored client-side
